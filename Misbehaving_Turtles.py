@@ -1,11 +1,31 @@
-'''Make it so the naughty turtle 25% of the time will turn in the opposite direction you tell it to.'''
-
 import turtle
 import random
 
 class MisbehavingTurtle(turtle.Turtle):
-    #You fill in the rest.
-
+    
+    '''def forward(self,t):
+        n = random.randint(1,100)
+        print(n)
+        if n <= 25:
+            print('misbehaved')
+            turtle.Turtle.forward(self,-t)
+        else:
+            turtle.Turtle.forward(self,t)'''
+            
+    def right(self,t):
+        n = random.randint(1,100)
+        print(n)
+        if n <= 25:
+            print('misbehaved')
+            turtle.Turtle.right(self,-t)
+        else:
+            turtle.Turtle.right(self,t)   
+            
+    def left(self, t):
+        self.right(-t)
+    
+                
+                
 
 # test case
 # drawing an octagon and a square
@@ -27,5 +47,6 @@ sugar.color('green')
 drawing_test(sugar)
 spice = MisbehavingTurtle()
 spice.color('red')
+print('misbehaving starts')
 drawing_test(spice)
 wn.mainloop()
